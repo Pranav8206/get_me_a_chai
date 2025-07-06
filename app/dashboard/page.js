@@ -18,15 +18,18 @@ const Dashboard = () => {
     if (!session) {
       router.push('/login');
     }
-    else {
-      getdata()
-    }
   }, [router, session]);
 
+  useEffect(() => {
+  if (!session?.user?.name) return;
+
   const getdata = async () => {
-    let u = await fetchuser(session?.user?.name)
-    setform(u)
-  }
+    let u = await fetchuser(session.user.name);
+    setform(u);
+  };
+    getdata();
+  }, [session?.user?.name]);
+
 
   const handleSubmit = async (e) => {
     let a = await updateProfile(e, session.user.name)

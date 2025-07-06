@@ -8,7 +8,6 @@ import Payments from "@/models/Payments";
 export const initialize = async (amount, to_username, paymentForm) => {
     try {
 
-    console.log("🔧 Connecting to database...");
     await connectDB();
 
     let user = await User.findOne({username: to_username});
@@ -30,11 +29,8 @@ export const initialize = async (amount, to_username, paymentForm) => {
       },
     };
 
-    console.log("📦 Creating Razorpay order with options:", options);
     const order = await instance.orders.create(options);
-    console.log("✅ Order created:", order);
 
-    console.log("📝 Saving payment to DB...");
     await Payments.create({
       name: paymentForm.name,
       to_user: to_username,
@@ -42,7 +38,6 @@ export const initialize = async (amount, to_username, paymentForm) => {
       message: paymentForm.message,
       orderId: order.id,
     });
-    console.log("✅ Payment saved to DB.");
 
     return order;
     }

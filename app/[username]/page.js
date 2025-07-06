@@ -6,16 +6,11 @@ import connectDB from '@/db/connectDB'
 
 const Username = async ({params}) => {
   const { username } = params;
-  console.log("Username pm:", username);
 
   const checkUser = async () => {
     await connectDB()
-    console.log("Connected to DB");
     let u = await User.findOne({ username: username})
-    console.log("User found:", u);
-    if (!u){
-      console.log("User not found")
-      
+    if (!u){      
       return notFound()
     }
   }

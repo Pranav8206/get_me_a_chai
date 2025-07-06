@@ -13,7 +13,7 @@ export default function Home() {
             <Image src="/coffee-lover.gif" alt="Image" width="32" height="40"/>
           </div>
           <div className="text-center text-xl pb-3">
-            Platform for Creators to Get funded from fans. Let's Start!
+            Platform for Creators to Get funded from fans. Let&apos;s Start!
           </div>
           <div className="py-4">
             <Link href={"/login"}>

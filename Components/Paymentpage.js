@@ -19,12 +19,20 @@ const Paymentpage = ({ username }) => {
   const searchParams = useSearchParams()
   const router = useRouter()
 
-  useEffect(() => {
-    getData()
-  }, [])
 
   useEffect(() => {
+
+    const getData = async () => {
+      let u = await fetchuser(username)
+      setcurrentuser(u);
+
+      let dbpayments = await fetchpayments(username)
+      setPayments(dbpayments)
+    }
+    getData();
+
     if (searchParams.get("paymentdone") == "true") {
+      
       toast('😊Payment has been made!', {
         position: "top-right",
         autoClose: 5000,
@@ -39,31 +47,21 @@ const Paymentpage = ({ username }) => {
       router.push(`${username}`)
     }
 
-  }, [])
+  }, [router, searchParams, username])
 
 
   const handlechange = (e) => {
     setPaymentform({ ...paymentform, [e.target.name]: e.target.value })
   }
 
-  const getData = async () => {
-    let u = await fetchuser(username)
-    setcurrentuser(u);
-
-    let dbpayments = await fetchpayments(username)
-    setPayments(dbpayments)
-  }
+  
 
 
   const pay = async (amount) => {
     try {
-      console.log("Calling initialize...");
-      console.log(paymentform, amount, username)
       const a = await initialize(amount, username, paymentform);
-      console.log("Initialize success:", a);
 
       const orderId = a.id;
-      console.log("Order ID:", orderId);
 
 
 
@@ -128,7 +126,7 @@ const Paymentpage = ({ username }) => {
         </section>
         <section className="pt-16 text-center text-black">
           <div className="font-extrabold text-3xl max-w-xs mx-auto truncate">@{username}</div>
-          <div className="py-2 text-lg text-gray-700">Let's help by giving a chai.</div>
+          <div className="py-2 text-lg text-gray-700">Let&aps;as help by giving a chai.</div>
           <div className="font-medium text-gray-500">{payments.length} Payments .   ₹{payments.reduce((a, b) => a + b.amount, 0)} raised</div>
         </section>
         <section className="payments my-10 flex flex-col-reverse sm:flex-row justify-center items-stretch gap-6 sm:gap-10 px-4 sm:px-10 md:px-10 lg:px-44">
@@ -148,7 +146,7 @@ const Paymentpage = ({ username }) => {
                       </lord-icon>
                     </span>
                     <span >
-                      {p.name} sent <span className="font-bold text-green-600">₹{p.amount}</span> with message {p.message && <span className="italic text-gray-500">"{p.message}"</span>}
+                      {p.name} sent <span className="font-bold text-green-600">₹{p.amount}</span> with message {p.message && <span className="italic text-gray-500">&quot;{p.message}&quot;</span>}
                     </span>
                   </div>
                   <hr className='w-10 shadow-2xl h-1 rounded-full mx-auto lg:mx-30' />
