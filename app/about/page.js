@@ -1,6 +1,12 @@
 import React from 'react'
 
-const page = () => {
+export const metadata = {
+      title: 'GetMeAChai - about us',
+      description: 'Here you can find more information about GetMeAChai, a platform for creators to get funded by their fans.',
+    };
+
+
+const Page = () => {
 return (
     <div>
         
@@ -32,9 +38,4 @@ return (
 )
 }
 
-export default page
-
-export const metadata = {
-      title: 'GetMeAChai - about us',
-      description: 'Here you can find more information about GetMeAChai, a platform for creators to get funded by their fans.',
-    };
+export default Page

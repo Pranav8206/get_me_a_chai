@@ -1,14 +1,14 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { useSession, signIn, signOut } from "next-auth/react"
-import { fetchuser, updateProfile, fetchpayments } from '@/actions/userAction'
+import { useSession} from "next-auth/react"
+import { fetchuser, updateProfile } from '@/actions/userAction'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Bounce } from 'react-toastify';
 
 
-const dashboard = () => {
+const Dashboard = () => {
   const { data: session } = useSession()
   const router = useRouter();
   const [form, setform] = useState({})
@@ -107,6 +107,6 @@ const dashboard = () => {
   )
 }
 
-export default dashboard
+export default Dashboard
 
 
