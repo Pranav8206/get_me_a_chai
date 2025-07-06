@@ -1,13 +1,11 @@
 "use client";
-import React, { use, useState, useEffect } from 'react';
+import React, {  useState, useEffect } from 'react';
 import Script from 'next/script';
 import { fetchpayments, initialize, fetchuser } from '@/actions/userAction';
-import { useSession } from 'next-auth/react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Bounce } from 'react-toastify';
-import Router from 'next/navigation';
 
 
 const Paymentpage = ({ username }) => {
@@ -123,8 +121,7 @@ const Paymentpage = ({ username }) => {
           <img className="w-full h-48 sm:h-72 object-cover  shadow text-gray-500  italic font-extralight"
             src={currentuser.coverPic || "/profile1bg.png"}
             alt="link invalid! (update from your dashboard.)" />
-          <img
-            className="profilepic z-10 bg-gray-200 w-24 h-24 sm:w-28 sm:h-28 rounded-xl border-4 border-white shadow-lg absolute left-1/2 -translate-x-1/2 -translate-y-1/2"
+          <img className="profilepic z-10 bg-gray-200 w-24 h-24 sm:w-28 sm:h-28 rounded-xl border-4 border-white shadow-lg absolute left-1/2 -translate-x-1/2 -translate-y-1/2"
             src={currentuser.profilePic || "/profile1dp.png"}
             alt="Profile"
           />

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+
 export default function Home() {
   return (
     <>
@@ -8,7 +9,8 @@ export default function Home() {
         <div className="flex flex-col items-center justify-center  space-y-4">
           <div className="text-3xl  sm:text-4xl font-black flex items-center space-x-2 pt-2">
             <span className="py-7">Buy me a Chai!</span>
-            <img className="w-8 h-10" src="/coffee-lover.gif" alt="coffee" />
+            
+            <Image src="/coffee-lover.gif" alt="Image" width="32" height="40"/>
           </div>
           <div className="text-center text-xl pb-3">
             Platform for Creators to Get funded from fans. Let's Start!
@@ -39,11 +41,8 @@ export default function Home() {
 
           <div className="grid sm:grid-cols-3 grid-cols-2 gap-4 mt-5 mb-5 px-2 text-center max-w-screen">
             <div className="flex flex-col items-center justify-center pt-2">
-              <img
-                className="bg-gray-200 size-20 rounded-full"
-                src="/gif1.gif"
-                alt=""
-              />
+              
+              <Image className="bg-gray-200 size-20 rounded-full" src="/gif1.gif" alt="Image" width="80" height="80"/>
               <span className="text-lg font-medium">Turn Gratitude into Chai.</span>
               <span className="text-base">
                 Support your favorite creators directly.
@@ -51,11 +50,7 @@ export default function Home() {
             </div>
 
             <div className="flex flex-col items-center justify-center pt-2">
-              <img
-                className="bg-gray-200 size-20 rounded-full"
-                src="/gif2.gif"
-                alt=""
-              />
+              <Image className="bg-gray-200 size-20 rounded-full" src="/gif2.gif" alt="Image" width="80" height="80"/>
               <span className="text-lg font-medium">
                 Encourage what you love.
               </span>
@@ -65,11 +60,7 @@ export default function Home() {
             </div>
 
             <div className="flex flex-col items-center justify-center pt-2">
-              <img
-                className="bg-gray-200 size-20 rounded-full"
-                src="/gif4.gif"
-                alt=""
-              />
+              <Image className="bg-gray-200 size-20 rounded-full" src="/gif4.gif" alt="Image" width="80" height="80"/>
               <span className="text-lg font-medium">Buy a Chai, Boost a Dream.</span>
               <span className="text-base">
                 Even stars shine brighter with support.
@@ -77,11 +68,7 @@ export default function Home() {
             </div>
 
             <div className="flex flex-col items-center justify-center pt-2">
-              <img
-                className="bg-gray-200 size-20 rounded-full"
-                src="/gif3.gif"
-                alt=""
-              />
+              <Image className="bg-gray-200 size-20 rounded-full" src="/gif3.gif" alt="Image" width="80" height="80"/>
               <span className="text-lg font-medium">Tiny Support, Big Impact</span>
               <span className="text-base">
                 Turn Appreciation into Action — Send a Chai!
@@ -89,11 +76,7 @@ export default function Home() {
             </div>
 
             <div className="flex flex-col items-center justify-center pt-2">
-              <img
-                className="bg-gray-200 size-20 rounded-full"
-                src="/gif6.gif"
-                alt=""
-              />
+              <Image className="bg-gray-200 size-20 rounded-full" src="/gif6.gif" alt="Image" width="80" height="80"/>
               <span className="text-lg font-medium">Your Chai, Their Fuel.</span>
               <span className="text-base">
                 Small support. Big impact.
@@ -101,11 +84,7 @@ export default function Home() {
             </div>
 
             <div className="flex flex-col items-center justify-center pt-2">
-              <img
-                className="bg-gray-200 size-20 rounded-full"
-                src="/gif5.gif"
-                alt=""
-              />
+              <Image className="bg-gray-200 size-20 rounded-full" src="/gif5.gif" alt="Image" width="80" height="80"/>
               <span className="text-lg font-medium">Creators Create. Fans Fuel.</span>
               <span className="text-base">
                 Say thanks with a warm cup.

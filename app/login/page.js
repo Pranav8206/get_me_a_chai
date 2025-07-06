@@ -1,10 +1,10 @@
 "use client"
 import React,{ useEffect } from 'react'
-import Link from 'next/link'
-import { useSession, signIn, signOut } from "next-auth/react"
+import { useSession, signIn } from "next-auth/react"
 import Github from 'next-auth/providers/github'
 import Google from 'next-auth/providers/google'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 
 const page = () => {
   const { data: session } = useSession()
@@ -39,7 +39,8 @@ const page = () => {
           Sign in with Facebook
         </button>
         <button type="button" className="hover:opacity-0 focus:opacity-0 hover:line-through focus:line-through text-white bg-black  focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center  me-2 mb-2 w-52 cursor-pointer">
-          <img src="/xlogo.png" alt="" className="w-4 h-4 me-2" />
+          
+          <Image className="me-2" src="/xlogo.png" alt="Image" width="16" height="16"/>
           Sign in with X
         </button>
         <button type="button" className="hover:opacity-0 focus:opacity-0 hover:line-through focus:line-through text-white bg-[#050708]  font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center   me-2 mb-2 w-52 cursor-pointer">
