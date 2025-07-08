@@ -127,7 +127,7 @@ const Paymentpage = ({ username }) => {
         </section>
         <section className="pt-16 text-center text-black">
           <div className="font-extrabold text-3xl max-w-xs mx-auto truncate">@{username}</div>
-          <div className="py-2 text-lg text-gray-700">Let&aps;as help by giving a chai.</div>
+          <div className="py-2 text-lg text-gray-700">Let&#x27;s help by giving a chai.</div>
           <div className="font-medium text-gray-500">{payments.length} Payments .   ₹{payments.reduce((a, b) => a + b.amount, 0)} raised</div>
         </section>
         <section className="payments my-10 flex flex-col-reverse sm:flex-row justify-center items-stretch gap-6 sm:gap-10 px-4 sm:px-10 md:px-10 lg:px-44">
