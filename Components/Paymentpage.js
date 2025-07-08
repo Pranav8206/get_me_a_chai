@@ -92,7 +92,8 @@ const Paymentpage = ({ username }) => {
       rzp1.open();
     } catch (error) {
       console.error("Payment failed", error);
-      toast.error("Payment initialization failed.");
+      toast.error("Razorpay credentials not found.");
+      toast.error("Dashboard update required.")
     }
   }
 
